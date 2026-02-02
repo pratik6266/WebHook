@@ -37,22 +37,49 @@ This is a monorepo containing two backend microservices built with Express and T
    pnpm dev
    ```
 
-## Project Structure
+## Docker Setup
 
+### Build and Run with Docker Compose
+
+1. **Build and start all services:**
+   ```bash
+   docker-compose up --build
+   ```
+
+2. **Run in background:**
+   ```bash
+   docker-compose up -d --build
+   ```
+
+3. **Stop services:**
+   ```bash
+   docker-compose down
+   ```
+
+### Individual Service Docker Commands
+
+**Producer Service:**
+```bash
+# Build
+docker build -f producer/Dockerfile -t webhook-producer .
+
+# Run
+docker run -p 3001:3001 webhook-producer
 ```
-webhook/
-├── package.json
-├── pnpm-workspace.yaml
-├── producer/
-│   ├── package.json
-│   ├── tsconfig.json
-│   ├── src/
-│   │   └── index.ts
-│   └── dist/
-└── consumer/
-    ├── package.json
-    ├── tsconfig.json
-    ├── src/
-    │   └── index.ts
-    └── dist/
+
+**Consumer Service:**
+```bash
+# Build
+docker build -f consumer/Dockerfile -t webhook-consumer .
+
+# Run
+docker run -p 3002:3002 webhook-consumer
 ```
+
+### Docker Architecture
+
+- **Multi-stage builds** for optimized images
+- **Health checks** for service monitoring
+- **Alpine Linux** base for smaller images
+- **Workspace-aware** dependency installation
+- **Production-optimized** runtime
