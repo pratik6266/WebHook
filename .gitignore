@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+
+# Environment variables
+/.env
+.DS_Store
+/logs
+*.log
+.idea/
+.vscode/
+*.iml
+/build
+/tmp
+.cache
+*.bak
+*.swp 
