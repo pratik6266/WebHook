@@ -9,8 +9,15 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "producer": ["../producer/index"]
+    }
   },
+  "references": [
+    { "path": "../producer" }
+  ],
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }

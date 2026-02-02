@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "install:all": "pnpm install",
-    "build": "pnpm -r build",
+    "build": "nx build producer && nx build consumer",
     "dev": "pnpm -r --parallel dev",
-    "start": "pnpm -r start",
-    "test": "pnpm -r test"
+    "start": "nx run-many --targets=start",
+    "test": "nx run-many --targets=test"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
   "devDependencies": {
     "@types/node": "^20.10.0",
     "nodemon": "^3.0.0",
+    "nx": "22.4.4",
     "ts-node": "^10.9.1",
     "typescript": "^5.3.0"
   }

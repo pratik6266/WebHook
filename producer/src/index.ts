@@ -1,5 +1,7 @@
 import express from 'express';
 
+console.log('Starting Producer service...');
+
 const app = express();
 const port = process.env.PORT || 3001;
 

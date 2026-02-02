@@ -17,3 +17,7 @@ dist/
 .cache
 *.bak
 *.swp 
+
+
+.nx/cache
+.nx/workspace-data

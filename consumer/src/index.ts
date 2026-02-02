@@ -1,4 +1,7 @@
 import express from 'express';
+import { testFile } from 'producer';
+
+console.log('Starting Consumer service...');
 
 const app = express();
 const port = process.env.PORT || 3002;
@@ -6,6 +9,7 @@ const port = process.env.PORT || 3002;
 app.use(express.json());
 
 app.get('/', (req, res) => {
+  testFile();
   res.send('Consumer service is running!');
 });
 
